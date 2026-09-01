@@ -1,12 +1,12 @@
-import GUI.GameOfLifeFrame;
+import gui.GameOfLifeFrame;
 
 import javax.swing.SwingUtilities;
 
 public class Main {
 
     public static void main(String[] args) {
-        int rows = 30;
-        int cols = 30;
+        int    rows             = 50;
+        int    cols             = 50;
         double percentOfNotDead = 30;
 
         SwingUtilities.invokeLater(() -> {

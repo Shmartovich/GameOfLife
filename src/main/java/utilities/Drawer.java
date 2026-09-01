@@ -1,4 +1,4 @@
-package Utilities;
+package utilities;
 
 public class Drawer {
     public static void drawField(boolean[][] gameField) {
@@ -14,7 +14,7 @@ public class Drawer {
             frame.append("==");
         }
         frame.append("\n");
-        
+
         System.out.print("\033[H");
         System.out.print(frame);
         System.out.print("\033[J");

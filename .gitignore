@@ -1,0 +1,13 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Maven
+target/
+
+# Java compiled files
+*.class
+
+# Other build directories
+out/
+build/

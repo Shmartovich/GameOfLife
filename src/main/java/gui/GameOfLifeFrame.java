@@ -1,7 +1,7 @@
-package GUI;
+package gui;
 
-import Entities.GameField;
-import Utilities.Calculator;
+import entities.GameField;
+import utilities.Calculator;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,15 +15,15 @@ import java.awt.FlowLayout;
 
 public class GameOfLifeFrame extends JFrame {
 
-    private final int rows;
-    private final int cols;
+    private final int    rows;
+    private final int    cols;
     private final double percentOfNotDead;
 
     private boolean[][] gameField;
 
     private final GamePanel gamePanel;
-    private final Timer timer;
-    private final JLabel generationLabel;
+    private final Timer     timer;
+    private final JLabel    generationLabel;
 
     private int generation = 0;
 
@@ -46,18 +46,24 @@ public class GameOfLifeFrame extends JFrame {
 
         JPanel controls = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
-        JButton startButton = new JButton("Start");
-        JButton pauseButton = new JButton("Pause");
-        JButton nextButton = new JButton("Next");
-        JButton clearButton = new JButton("Clear");
+        JButton startButton  = new JButton("Start");
+        JButton pauseButton  = new JButton("Pause");
+        JButton nextButton   = new JButton("Next");
+        JButton clearButton  = new JButton("Clear");
         JButton randomButton = new JButton("Random");
 
         generationLabel = new JLabel("Generation: 0");
 
         JSlider speedSlider = new JSlider(50, 1000, 250);
-        speedSlider.setToolTipText("Delay in milliseconds");
 
         timer = new Timer(speedSlider.getValue(), e -> nextGeneration());
+        speedSlider.addChangeListener(e -> {
+            timer.setDelay(speedSlider.getValue());
+
+            speedSlider.setToolTipText(
+                    "Delay: " + speedSlider.getValue() + " milliseconds"
+            );
+        });
 
         startButton.addActionListener(e -> timer.start());
 
@@ -98,7 +104,7 @@ public class GameOfLifeFrame extends JFrame {
         controls.add(nextButton);
         controls.add(clearButton);
         controls.add(randomButton);
-        controls.add(new JLabel("Speed:"));
+        controls.add(new JLabel("Next generation delay:"));
         controls.add(speedSlider);
         controls.add(generationLabel);
 

@@ -1,4 +1,4 @@
-package Utilities;
+package utilities;
 
 public class Calculator {
     public static boolean[][] createNextGeneration(boolean[][] gameField) {

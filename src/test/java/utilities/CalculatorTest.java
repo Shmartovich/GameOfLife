@@ -1,4 +1,4 @@
-package Utilities;
+package utilities;
 
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +35,7 @@ class CalculatorTest {
                 {false, false, false, false, false}
         };
 
-        boolean[][] next = Calculator.createNextGeneration(vertical);
+        boolean[][] next                = Calculator.createNextGeneration(vertical);
         boolean[][] afterTwoGenerations = Calculator.createNextGeneration(next);
 
         assertArrayEquals(horizontal, next);
@@ -55,12 +55,12 @@ class CalculatorTest {
                 {true, true, true}
         };
 
-        assertArrayEquals(new boolean[][] {
+        assertArrayEquals(new boolean[][]{
                 {false, false, false},
                 {false, false, false},
                 {false, false, false}
         }, Calculator.createNextGeneration(underpopulated));
-        assertArrayEquals(new boolean[][] {
+        assertArrayEquals(new boolean[][]{
                 {true, false, true},
                 {false, false, false},
                 {true, false, true}
@@ -74,7 +74,7 @@ class CalculatorTest {
                 {true, true}
         };
 
-        assertArrayEquals(new boolean[][] {
+        assertArrayEquals(new boolean[][]{
                 {true, true},
                 {true, true}
         }, Calculator.createNextGeneration(field));

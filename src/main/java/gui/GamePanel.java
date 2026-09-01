@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import javax.swing.JPanel;
 import java.awt.Color;
@@ -9,8 +9,8 @@ import java.awt.event.MouseEvent;
 
 public class GamePanel extends JPanel {
 
-    private boolean[][] gameField;
-    private final int cellSize;
+    private       boolean[][] gameField;
+    private final int         cellSize;
 
     public GamePanel(boolean[][] gameField, int cellSize) {
         this.gameField = gameField;
